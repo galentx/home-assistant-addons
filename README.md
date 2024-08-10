@@ -8,7 +8,7 @@ Add to Home Assistant using the repository url:
 https://github.com/galentx/home-assistant-addons
 
 
-## zabbix-agent{,2}
+## zabbix-agent2
 
-Zabbix agent{,2}.
+Zabbix agent2.
 

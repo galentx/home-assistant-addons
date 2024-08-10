@@ -1,3 +1,13 @@
+# [1.6] - 2024-08-09
+
+## Changed
+
+- From pschmitt repo to galentx
+
+## Removed
+
+- Everything but Zabbix_agent2
+
 # [1.5] - 2023-07-10
 
 ## Added
