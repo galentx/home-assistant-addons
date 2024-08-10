@@ -16,7 +16,6 @@ jobs:
           - zabbix-agent2
         arch:
           - amd64
-        exclude:
 
     steps:
       - name: Checkout repo
