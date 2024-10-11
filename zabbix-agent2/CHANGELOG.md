@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+# [1.6.1] - 2024-10-11
+
+## Merged
+
+- From pschmitt repo 1.5.1 to galentx
+
 # [1.6] - 2024-08-09
 
 ## Changed
@@ -7,6 +14,12 @@
 ## Removed
 
 - Everything but Zabbix_agent2
+
+# [1.5.1] - 2024-09-03
+
+## Fixed
+
+- Adjust configuration to upstream plugin executable name changes
 
 # [1.5] - 2023-07-10
 

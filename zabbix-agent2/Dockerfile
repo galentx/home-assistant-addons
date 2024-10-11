@@ -1,10 +1,10 @@
 ARG BUILD_ARCH
 ARG BUILD_VERSION
-ARG BUILD_BASE_IMAGE=zabbix/zabbix-agent2:alpine-latest
+ARG BUILD_BASE_IMAGE=zabbix/zabbix-agent2:alpine-6.4-latest
 
 FROM ${BUILD_BASE_IMAGE} as builder
 
-FROM alpine
+FROM alpine:3.20
 
 LABEL maintainer "Galen <gbkpub@kannarr.net>"
 
@@ -18,7 +18,7 @@ RUN apk add --no-cache jq zabbix-agent2 && \
 
 # Copy zabbix-agent2 plugins
 COPY --from=builder ["/usr/sbin/zabbix-agent2-plugin", "/usr/sbin/zabbix-agent2-plugin"]
-#RUN echo -e "\nPlugins.PostgreSQL.System.Path=/usr/sbin/zabbix-agent2-plugin/zabbix-agent2-plugin-mongodb\nPlugins.PostgreSQL.System.Path=/usr/sbin/zabbix-agent2-plugin/zabbix-agent2-plugin-postgresql\n" >> /etc/zabbix/zabbix_agent2.conf
+RUN echo -e "\nPlugins.PostgreSQL.System.Path=/usr/sbin/zabbix-agent2-plugin/mongodb\nPlugins.PostgreSQL.System.Path=/usr/sbin/zabbix-agent2-plugin/postgresql\n" >> /etc/zabbix/zabbix_agent2.conf
 
 # Copy data for add-on
 COPY run.sh /
